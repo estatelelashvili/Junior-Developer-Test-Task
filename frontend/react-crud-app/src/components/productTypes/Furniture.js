@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-// import '../../styles/form/productTypes/furniture.scss';
 
 export class Furniture extends Component {
   render() {
@@ -35,7 +34,7 @@ export class Furniture extends Component {
             required
           />
         </div>
-        <p>Please, provide dimensions in HxWxL format.</p>
+        <p>*Please, provide dimensions in HxWxL format.</p>
       </Fragment>
     );
   }

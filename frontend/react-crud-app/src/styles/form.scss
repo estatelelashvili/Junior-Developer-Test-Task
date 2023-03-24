@@ -1,0 +1,55 @@
+#product_form{
+    margin: 10px 0 0 40px;
+    hr{
+      margin: 0 0 20px 0;
+      width: 95%;
+    }
+  .product-field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  
+    label {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 16px;
+      color: #444;
+      margin: 8px;
+      width: 110px;
+      font-weight: 600;
+    }
+
+    input, select{
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin: 2px;
+      border-radius: 2px; 
+      flex: 0.2;
+      border: 1px solid #ccc;
+      padding: 4px;
+      font-size: 16px;
+      color: #444;
+      background-color: #fff;
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      
+      &:hover {
+        cursor: pointer;
+        border-color: #aaa;
+      }
+      
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+    }
+
+    input[required] + label:after {
+      content: '*';
+      color: #ff4d4f;
+      margin-left: 4px;
+    }
+
+    select{
+      flex: 0.1;
+    }
+  }
+}

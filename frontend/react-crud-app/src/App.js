@@ -5,7 +5,7 @@ import Footer from './components/footer/Footer';
 
 function App() {
   return (
-    <div className='App'>
+    <div className='main-container'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<ProductList />} />

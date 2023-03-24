@@ -1,0 +1,19 @@
+.products-container{
+  margin: 10px 0 0 40px;
+  hr{
+    margin: 0 0 20px 0;
+    width: 95%;
+  }
+
+  .product-grid-view{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 10px;
+
+    .product-card{
+      border: 1px solid darkgray;
+      border-radius: 5px;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import HeaderAdd from '../headers/HeaderAdd';
 import FormFields from './FormFields';
 import componentMap from '../productTypes/ComponentMap';
 import Select from './Select';
+import '../../styles/form.scss';
 
 export class Form extends Component {
   render() {

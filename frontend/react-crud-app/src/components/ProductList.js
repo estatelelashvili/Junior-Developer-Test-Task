@@ -1,6 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import HeaderList from './headers/HeaderList';
 import Product from './Product';
+import '../styles/product.scss';
 
 class ProductList extends Component {
   constructor(props) {
@@ -79,7 +80,7 @@ class ProductList extends Component {
     const { products } = this.state;
 
     return (
-      <Fragment>
+      <div className='products-container'>
         <HeaderList onHandleMassDelete={this.handleMassDelete} />
         <hr />
         <div className='product-grid-view'>
@@ -94,7 +95,7 @@ class ProductList extends Component {
               />
             ))}
         </div>
-      </Fragment>
+      </div>
     );
   }
 }

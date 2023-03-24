@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../../styles/header.scss';
 
 export class HeaderList extends Component {
   render() {
     return (
       <header>
-        <h2>Product List</h2>
+        <h1>Product List</h1>
         <ul>
           <li>
             <Link to='/addproduct'>

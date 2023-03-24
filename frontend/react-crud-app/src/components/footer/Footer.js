@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import '../../styles/footer.scss';
 
 class Footer extends Component {
   render() {
     return (
       <footer>
-        <p>
-          Scandiweb <span>&copy;</span> 2023
-        </p>
+        <hr />
+        <p>Scandiweb Test assignment</p>
       </footer>
     );
   }

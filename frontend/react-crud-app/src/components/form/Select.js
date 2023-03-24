@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class Select extends Component {
   render() {
     return (
-      <div>
+      <div className='product-field'>
         <label>Type Switcher</label>
         <select
           name='type'
