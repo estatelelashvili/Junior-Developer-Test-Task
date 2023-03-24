@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+
+nav ul {
+  list-style: none;
+}
+nav ul li{
+  display: inline-block;
+  padding: 10px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+hr{
+  width: 95%;
+}
+
+ul{
+  display: flex;
+  li{
+    list-style: none;
+  }
+}
+.delete-checkbox{
+  background-color: aliceblue;
+}
+
+#product_form{
+  #sku{
+    background-color: aliceblue;
+  }
+
+  #name{
+    background-color: aliceblue;
+  }
+
+  #price{
+    background-color: aliceblue;
+  }
+
+  #productType{
+    background-color: aliceblue;
+  }
+
+  #size{
+    background-color: aliceblue;
+  }
+  
+  #weight{
+    background-color: aliceblue;
+  }
+
+  #height{
+    background-color: aliceblue;
+  }
+
+  #width{
+    background-color: aliceblue;
+  }
+
+  #length{
+    background-color: aliceblue;
+  }
+
+}
+
+.product-grid-view{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 10px;
+}
+
+.product-card{
+  border: 1px solid darkgray;
+  border-radius: 5px;
+}

@@ -1,0 +1,45 @@
+import React, { Component, Fragment } from 'react';
+
+export class FormFields extends Component {
+  render() {
+    return (
+      <Fragment>
+        <div>
+          <label>SKU </label>
+          <input
+            type='text'
+            name='sku'
+            id='sku'
+            value={this.props.state.sku}
+            onChange={this.props.onHandleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Name </label>
+          <input
+            type='text'
+            name='name'
+            id='name'
+            value={this.props.state.name}
+            onChange={this.props.onHandleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Price ($) </label>
+          <input
+            type='number'
+            name='price'
+            id='price'
+            value={this.props.state.price}
+            onChange={this.props.onHandleInputChange}
+            required
+          />
+        </div>
+      </Fragment>
+    );
+  }
+}
+
+export default FormFields;
