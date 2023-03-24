@@ -9,7 +9,7 @@ export class Book extends Component {
           type='number'
           name='weight'
           id='weight'
-          onChange={this.props.onHandleInputChange}
+          onChange={this.props.onHandleInputChangeAttributes}
           required
         />
         <p>Please, provide weight in Kg.</p>

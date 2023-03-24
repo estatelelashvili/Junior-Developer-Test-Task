@@ -13,7 +13,7 @@ code {
 }
 
 .App {
-  text-align: center;
+  // text-align: center;
   width: 100%;
   margin: auto;
 }
@@ -97,3 +97,49 @@ ul{
   border: 1px solid darkgray;
   border-radius: 5px;
 }
+
+
+
+.product-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+} 
+  label {
+    font-size: 16px;
+    color: #444;
+    // margin-bottom: 8px;
+    margin: 8px;
+    width: 100px; /* set a fixed width for the labels */
+    font-weight: 500;
+  }
+
+  input, select {
+    margin: 2px;
+    border-radius: 2px;
+    width: 200px; 
+    flex: 0.1; /* set the input to take up all remaining space */
+    border: 1px solid #ccc;
+    padding: 4px;
+    font-size: 16px;
+    color: #444;
+    background-color: #fff;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    
+    &:hover {
+      cursor: pointer;
+      border-color: #aaa;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+  }
+
+  input[required] + label:after {
+    content: '*';
+    color: #ff4d4f;
+    margin-left: 4px;
+  }

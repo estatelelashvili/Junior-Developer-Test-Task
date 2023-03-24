@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from 'react';
-import Select from './form/Select';
-import FormFields from './form/FormFields';
-import componentMap from './productTypes/ComponentMap';
-import HeaderAdd from './headers/HeaderAdd';
+import React, { Component } from 'react';
+// import Select from './form/Select';
+// import FormFields from './form/FormFields';
+// import componentMap from './productTypes/ComponentMap';
+// import HeaderAdd from './headers/HeaderAdd';
+import Form from './form/Form';
 
 class AddProduct extends Component {
   constructor(props) {
@@ -53,46 +54,31 @@ class AddProduct extends Component {
   };
 
   handleInputChange = (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
+    this.updateState(event.target.name, event.target.value);
+  };
 
-    this.setState({
-      [name]: value,
+  handleInputChangeAttributes = (event) => {
+    this.updateState('attribute', {
+      [event.target.name]: event.target.value,
     });
   };
-  handleInputChangeAttributes = (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
 
+  updateState = (name, value) => {
     this.setState((prevState) => ({
-      attribute: {
-        ...prevState.attribute,
-        [name]: value,
-      },
+      [name]:
+        typeof value === 'object' ? { ...prevState[name], ...value } : value,
     }));
   };
 
   render() {
-    const { type } = this.state;
-    const SelectedComponent = componentMap[type];
     return (
-      <Fragment>
-        <form id='product_form' onSubmit={this.handleSubmit}>
-          <HeaderAdd />
-          <FormFields
-            state={this.state}
-            onHandleInputChange={this.handleInputChange}
-          />
-          <Select type={type} onHandleTypeChange={this.handleTypeChange} />
-          {SelectedComponent && (
-            <SelectedComponent
-              onHandleInputChange={this.handleInputChangeAttributes}
-            />
-          )}
-        </form>
-      </Fragment>
+      <Form
+        state={this.state}
+        onHandleSubmit={this.handleSubmit}
+        onHandleInputChange={this.handleInputChange}
+        onHandleTypeChange={this.handleTypeChange}
+        onHandleInputChangeAttributes={this.handleInputChangeAttributes}
+      />
     );
   }
 }

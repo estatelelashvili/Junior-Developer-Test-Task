@@ -9,7 +9,7 @@ export class DVD extends Component {
           type='number'
           name='size'
           id='size'
-          onChange={this.props.onHandleInputChange}
+          onChange={this.props.onHandleInputChangeAttributes}
           required
         />
         <p>Please, provide disc space in MB.</p>

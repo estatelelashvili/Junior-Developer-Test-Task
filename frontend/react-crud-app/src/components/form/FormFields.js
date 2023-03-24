@@ -4,8 +4,8 @@ export class FormFields extends Component {
   render() {
     return (
       <Fragment>
-        <div>
-          <label>SKU </label>
+        <div className='product-field'>
+          <label>SKU</label>
           <input
             type='text'
             name='sku'
@@ -15,8 +15,8 @@ export class FormFields extends Component {
             required
           />
         </div>
-        <div>
-          <label>Name </label>
+        <div className='product-field'>
+          <label>Name</label>
           <input
             type='text'
             name='name'
@@ -26,8 +26,8 @@ export class FormFields extends Component {
             required
           />
         </div>
-        <div>
-          <label>Price ($) </label>
+        <div className='product-field'>
+          <label>Price ($)</label>
           <input
             type='number'
             name='price'

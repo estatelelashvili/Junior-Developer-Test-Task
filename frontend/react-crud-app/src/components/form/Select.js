@@ -16,9 +16,6 @@ export class Select extends Component {
           <option id='DVD' value='dvd'>
             DVD
           </option>
-          {/* <option id='DVD' value='dvd'>
-            DVD-disc
-          </option> */}
           <option id='Book' value='book'>
             Book
           </option>

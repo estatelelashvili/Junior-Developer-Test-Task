@@ -47,15 +47,6 @@ class ProductList extends Component {
       });
   }
 
-  // async fetchProducts() {
-  //   return fetch('/api/products.php')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       this.setState({ products: data });
-  //     })
-  //     .catch((error) => console.error(error));
-  // }
-
   async fetchProducts() {
     try {
       const response = await fetch('/api/endpoint.php');
