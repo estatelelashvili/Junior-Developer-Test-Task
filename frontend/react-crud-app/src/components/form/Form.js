@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import HeaderAdd from '../headers/HeaderAdd';
+import HeaderAdd from '../header/HeaderAdd';
 import FormFields from './FormFields';
 import componentMap from '../productTypes/ComponentMap';
 import Select from './Select';

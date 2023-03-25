@@ -1,9 +1,10 @@
 #product_form{
-    margin: 10px 0 0 40px;
-    hr{
-      margin: 0 0 20px 0;
-      width: 95%;
-    }
+  min-height: 85vh;
+  margin: 10px 0 0 40px;
+  hr{
+    margin: 0 0 20px 0;
+    width: 95%;
+  }
   .product-field {
     display: flex;
     flex-wrap: wrap;

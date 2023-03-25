@@ -12,12 +12,17 @@ class Product extends Component {
             this.props.onHandleCheckBoxChange(event, this.props.product);
           }}
         />
-        <p>{this.props.product.sku}</p>
-        <p>{this.props.product.name}</p>
-        <p>{this.props.product.price}</p>
-        <p>
-          <strong>{lastKey}</strong>: {lastValue}
-        </p>
+        <div className='product-card-content'>
+          <p>{this.props.product.sku}</p>
+          <p>{this.props.product.name}</p>
+          <p>
+            {this.props.product.price}
+            <span>$</span>
+          </p>
+          <p>
+            <strong>{lastKey}</strong>: {lastValue}
+          </p>
+        </div>
       </div>
     );
   }

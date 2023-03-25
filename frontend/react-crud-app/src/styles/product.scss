@@ -1,4 +1,6 @@
 .products-container{
+  min-height: 85vh;
+  height: fit-content;
   margin: 10px 0 0 40px;
   hr{
     margin: 0 0 20px 0;
@@ -6,14 +8,30 @@
   }
 
   .product-grid-view{
+    height: fit-content;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 40px 10px;
     margin: 10px;
 
     .product-card{
-      border: 1px solid darkgray;
-      border-radius: 5px;
+      width: 18vw;
+      height: 26vh;
+      border: 2px solid darkgray;
+      border-radius: 3px;
+      .delete-checkbox{
+        margin: 10px;
+      }
+      .product-card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+          margin: 3px;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
     }
   }
 }

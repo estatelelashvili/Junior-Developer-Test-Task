@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeaderList from './headers/HeaderList';
+import HeaderList from './header/HeaderList';
 import Product from './Product';
 import '../styles/product.scss';
 
