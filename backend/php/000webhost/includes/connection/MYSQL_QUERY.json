@@ -1,0 +1,4 @@
+{
+"query": "SELECT p.product_id, p.sku, p.name, p.price, p.product_type, CASE WHEN p.product_type = 'book' THEN b.weight_kg WHEN p.product_type = 'dvd' THEN d.size_mb WHEN p.product_type = 'furniture' THEN CONCAT(f.width_cm, 'x', f.height_cm, 'x', f.length_cm) ELSE '' END AS attribute FROM products p LEFT JOIN book b ON p.product_id = b.product_id LEFT JOIN dvd d ON p.product_id = d.product_id LEFT JOIN furniture f ON p.product_id = f.product_id ORDER BY p.product_id;"
+}
+
