@@ -8,6 +8,8 @@ export class Book extends Component {
           <label>Weight (KG) </label>
           <input
             type='number'
+            min='0.1'
+            step='0.01'
             name='weight'
             id='weight'
             onChange={this.props.onHandleInputChangeAttributes}

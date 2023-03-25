@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2023 at 02:36 PM
+-- Generation Time: Mar 25, 2023 at 02:18 PM
 -- Server version: 10.5.16-MariaDB
 -- PHP Version: 7.3.32
 
@@ -39,7 +39,9 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`book_id`, `product_id`, `weight_kg`) VALUES
-(14, 159, 200.00);
+(26, 197, 200.00),
+(27, 200, 200.00),
+(30, 209, 200.00);
 
 --
 -- Indexes for dumped tables
@@ -60,7 +62,7 @@ ALTER TABLE `book`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Constraints for dumped tables

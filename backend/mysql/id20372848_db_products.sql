@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2023 at 02:38 PM
+-- Generation Time: Mar 25, 2023 at 02:18 PM
 -- Server version: 10.5.16-MariaDB
 -- PHP Version: 7.3.32
 
@@ -86,7 +86,9 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`book_id`, `product_id`, `weight_kg`) VALUES
-(14, 159, 200.00);
+(26, 197, 200.00),
+(27, 200, 200.00),
+(30, 209, 200.00);
 
 -- --------------------------------------------------------
 
@@ -105,7 +107,9 @@ CREATE TABLE `dvd` (
 --
 
 INSERT INTO `dvd` (`dvd_id`, `product_id`, `size_mb`) VALUES
-(106, 158, 200);
+(119, 196, 200),
+(120, 199, 200),
+(123, 208, 200);
 
 -- --------------------------------------------------------
 
@@ -116,9 +120,9 @@ INSERT INTO `dvd` (`dvd_id`, `product_id`, `size_mb`) VALUES
 CREATE TABLE `furniture` (
   `furniture_id` int(11) NOT NULL,
   `product_id` int(11) DEFAULT NULL,
-  `width_cm` decimal(10,2) DEFAULT NULL,
-  `height_cm` decimal(10,2) DEFAULT NULL,
-  `length_cm` decimal(10,2) DEFAULT NULL
+  `width_cm` int(11) DEFAULT NULL,
+  `height_cm` int(11) DEFAULT NULL,
+  `length_cm` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -126,7 +130,8 @@ CREATE TABLE `furniture` (
 --
 
 INSERT INTO `furniture` (`furniture_id`, `product_id`, `width_cm`, `height_cm`, `length_cm`) VALUES
-(32, 160, 200.00, 200.00, 200.00);
+(45, 198, 200, 200, 200),
+(46, 201, 200, 200, 200);
 
 -- --------------------------------------------------------
 
@@ -147,9 +152,14 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `sku`, `name`, `price`, `product_type`) VALUES
-(158, 'SKUTest000', 'NameTest000', 25.00, 'dvd'),
-(159, 'SKUTest001', 'NameTest001', 25.00, 'book'),
-(160, 'SKUTest002', 'NameTest002', 25.00, 'furniture');
+(196, 'SKUTest000', 'NameTest000', 25.00, 'dvd'),
+(197, 'SKUTest001', 'NameTest001', 25.00, 'book'),
+(198, 'SKUTest002', 'NameTest002', 25.00, 'furniture'),
+(199, 'SKUTest000', 'NameTest000', 25.00, 'dvd'),
+(200, 'SKUTest001', 'NameTest001', 25.00, 'book'),
+(201, 'SKUTest002', 'NameTest002', 25.00, 'furniture'),
+(208, 'SKUTest000', 'NameTest000', 25.00, 'dvd'),
+(209, 'SKUTest001', 'NameTest001', 25.00, 'book');
 
 --
 -- Indexes for dumped tables
@@ -190,25 +200,25 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `dvd`
 --
 ALTER TABLE `dvd`
-  MODIFY `dvd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `dvd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- AUTO_INCREMENT for table `furniture`
 --
 ALTER TABLE `furniture`
-  MODIFY `furniture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `furniture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
 
 --
 -- Constraints for dumped tables

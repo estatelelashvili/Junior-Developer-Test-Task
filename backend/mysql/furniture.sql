@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2023 at 02:35 PM
+-- Generation Time: Mar 25, 2023 at 02:17 PM
 -- Server version: 10.5.16-MariaDB
 -- PHP Version: 7.3.32
 
@@ -31,9 +31,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `furniture` (
   `furniture_id` int(11) NOT NULL,
   `product_id` int(11) DEFAULT NULL,
-  `width_cm` decimal(10,2) DEFAULT NULL,
-  `height_cm` decimal(10,2) DEFAULT NULL,
-  `length_cm` decimal(10,2) DEFAULT NULL
+  `width_cm` int(11) DEFAULT NULL,
+  `height_cm` int(11) DEFAULT NULL,
+  `length_cm` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -41,7 +41,8 @@ CREATE TABLE `furniture` (
 --
 
 INSERT INTO `furniture` (`furniture_id`, `product_id`, `width_cm`, `height_cm`, `length_cm`) VALUES
-(32, 160, 200.00, 200.00, 200.00);
+(45, 198, 200, 200, 200),
+(46, 201, 200, 200, 200);
 
 --
 -- Indexes for dumped tables
@@ -62,7 +63,7 @@ ALTER TABLE `furniture`
 -- AUTO_INCREMENT for table `furniture`
 --
 ALTER TABLE `furniture`
-  MODIFY `furniture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `furniture_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Constraints for dumped tables

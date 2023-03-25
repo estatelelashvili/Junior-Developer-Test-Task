@@ -8,6 +8,7 @@ export class Furniture extends Component {
           <label>Height (CM) </label>
           <input
             type='number'
+            min='1'
             name='height'
             id='height'
             onChange={this.props.onHandleInputChangeAttributes}
@@ -18,6 +19,7 @@ export class Furniture extends Component {
           <label>Width (CM) </label>
           <input
             type='number'
+            min='1'
             name='width'
             id='width'
             onChange={this.props.onHandleInputChangeAttributes}
@@ -28,6 +30,7 @@ export class Furniture extends Component {
           <label>Length (CM) </label>
           <input
             type='number'
+            min='1'
             name='length'
             id='length'
             onChange={this.props.onHandleInputChangeAttributes}

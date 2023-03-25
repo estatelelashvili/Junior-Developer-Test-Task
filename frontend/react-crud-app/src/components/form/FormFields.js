@@ -30,6 +30,8 @@ export class FormFields extends Component {
           <label>Price ($)</label>
           <input
             type='number'
+            min='0'
+            step='0.01'
             name='price'
             id='price'
             value={this.props.state.price}

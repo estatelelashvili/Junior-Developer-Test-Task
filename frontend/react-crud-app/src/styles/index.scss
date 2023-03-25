@@ -1,12 +1,9 @@
+@import "variables.scss";
+
 body {
   margin: 0;
   padding: 0;
-  // min-height: 100vh;
-  // display: flex;
-  // flex-direction: column;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: $base-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
@@ -15,13 +12,18 @@ body {
     margin: auto;
 
     .delete-checkbox{
-      cursor: pointer;;
+      cursor: pointer;
     }
 
     hr{
-      width: 95%;
+      width: $hr-width;
       height: 2px;
-      background-color: darkgray;
+      background-color: $secondary-light;
+    }
+
+    p{
+      font-size: $base;
+      font-weight: $accent;
     }
   }
 }

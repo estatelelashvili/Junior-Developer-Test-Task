@@ -8,6 +8,7 @@ export class DVD extends Component {
           <label>Size (MB) </label>
           <input
             type='number'
+            min='1'
             name='size'
             id='size'
             onChange={this.props.onHandleInputChangeAttributes}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2023 at 02:34 PM
+-- Generation Time: Mar 25, 2023 at 02:17 PM
 -- Server version: 10.5.16-MariaDB
 -- PHP Version: 7.3.32
 
@@ -41,9 +41,14 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `sku`, `name`, `price`, `product_type`) VALUES
-(158, 'SKUTest000', 'NameTest000', 25.00, 'dvd'),
-(159, 'SKUTest001', 'NameTest001', 25.00, 'book'),
-(160, 'SKUTest002', 'NameTest002', 25.00, 'furniture');
+(196, 'SKUTest000', 'NameTest000', 25.00, 'dvd'),
+(197, 'SKUTest001', 'NameTest001', 25.00, 'book'),
+(198, 'SKUTest002', 'NameTest002', 25.00, 'furniture'),
+(199, 'SKUTest000', 'NameTest000', 25.00, 'dvd'),
+(200, 'SKUTest001', 'NameTest001', 25.00, 'book'),
+(201, 'SKUTest002', 'NameTest002', 25.00, 'furniture'),
+(208, 'SKUTest000', 'NameTest000', 25.00, 'dvd'),
+(209, 'SKUTest001', 'NameTest001', 25.00, 'book');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +68,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

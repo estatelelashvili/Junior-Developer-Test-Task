@@ -1,23 +1,24 @@
+@import "variables.scss";
+
 .products-container{
-  min-height: 85vh;
+  min-height: $main-content-min-height;
   height: fit-content;
   margin: 10px 0 0 40px;
   hr{
     margin: 0 0 20px 0;
-    width: 95%;
+    width: $hr-width;
   }
 
   .product-grid-view{
-    height: fit-content;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px 10px;
-    margin: 10px;
+    gap: 40px 0;
+    margin: 0 40px;
 
     .product-card{
-      width: 18vw;
-      height: 26vh;
-      border: 2px solid darkgray;
+      width: 19vw;
+      height: 30vh;
+      border: 2px solid $secondary-light;
       border-radius: 3px;
       .delete-checkbox{
         margin: 10px;
@@ -28,8 +29,8 @@
         align-items: center;
         p{
           margin: 3px;
-          font-size: 16px;
-          font-weight: 400;
+          font-size: $base;
+          font-weight: $ease;
         }
       }
     }
