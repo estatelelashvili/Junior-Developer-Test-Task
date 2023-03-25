@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import attributeMap from './form/attribute/AttributeMap';
 
 class Product extends Component {
   render() {
     const [lastKey, lastValue] = Object.entries(this.props.product).pop();
+    const SelectedAttributeParagraph = attributeMap[lastKey];
     return (
       <div key={this.props.product.product_id} className='product-card'>
         <input
@@ -17,11 +19,14 @@ class Product extends Component {
           <p>{this.props.product.name}</p>
           <p>
             {this.props.product.price}
-            <span>$</span>
+            <span> $</span>
           </p>
-          <p>
-            <strong>{lastKey}</strong>: {lastValue}
-          </p>
+          {SelectedAttributeParagraph && (
+            <SelectedAttributeParagraph
+              lastKey={lastKey}
+              lastValue={lastValue}
+            />
+          )}
         </div>
       </div>
     );
