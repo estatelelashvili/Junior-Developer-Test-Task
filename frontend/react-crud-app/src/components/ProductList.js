@@ -22,10 +22,11 @@ class ProductList extends Component {
     try {
       await Promise.all(deletePromises);
       await this.fetchProducts();
-      this.setState({ selectedProducts: [] }, () => {});
     } catch (error) {
       console.error('There was a problem with the fetch operation:', error);
     }
+    this.setState({ selectedProducts: [] });
+    this.uncheckAllCheckboxes();
   }
 
   async handleDeleteProduct(product) {
@@ -75,6 +76,13 @@ class ProductList extends Component {
     event.target.checked && selectedProducts.push(product);
     this.setState({ selectedProducts });
   };
+
+  uncheckAllCheckboxes() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+  }
 
   render() {
     const { products } = this.state;

@@ -13,43 +13,43 @@ abstract class Product {
         $this->conn = $conn;
     }
     
-    public function get_product_id() {
+    public function getProductId() {
         return $this->product_id;
     }
     
-    public function set_product_id($id) {
+    public function setProductId($id) {
         $this->product_id = $id;
     }
     
-    public function get_sku() {
+    public function getSku() {
         return $this->sku;
     }
     
-    public function set_sku($sku) {
+    public function setSku($sku) {
         $this->sku = $sku;
     }
 
-    public function get_name() {
+    public function getName() {
         return $this->name;
     }
     
-    public function set_name($name) {
+    public function setName($name) {
         $this->name = $name;
     }
     
-    public function get_price() {
+    public function getPrice() {
         return $this->price;
     }
     
-    public function set_price($price) {
+    public function setPrice($price) {
         $this->price = $price;
     }
     
-    public function get_product_type() {
+    public function getProductType() {
         return $this->product_type;
     }
     
-    public function set_product_type($product_type) {
+    public function setProductType($product_type) {
         $this->product_type = $product_type;
     }
     
@@ -62,71 +62,52 @@ abstract class Product {
         }
     }
     
-    private function set_common_attrbutes($data){
-       $this->set_sku($data['sku']);
-       $this->set_name($data['name']);
-       $this->set_price($data['price']);
-       $this->set_product_type($data['product_type']);
-
+    private function setCommonAttributes($data){
+       $this->setSku($data['sku']);
+       $this->setName($data['name']);
+       $this->setPrice($data['price']);
+       $this->setProductType($data['product_type']);
     }
     
-    private function compose_insert_query(){
+    private function composeInsertQuery(){
         $sql = "INSERT INTO products (sku, name, price, product_type) 
         VALUES ('$this->sku', '$this->name', '$this->price', '$this->product_type')";
         return $sql;
     }
     
-    public function insert_into_products($data){
-        $this->set_common_attrbutes($data);
-        $sql = $this->compose_insert_query();
+    public function insertIntoProducts($data){
+        $this->setCommonAttributes($data);
+        $sql = $this->composeInsertQuery();
         $result = $this->conn->query($sql);
         $this->handleError500($result);
         $product_id = $this->conn->insert_id;
         return $product_id;
     }
     
-    // private function delete_from_products($product_id){
-    //     $sql = "DELETE FROM products WHERE id=$product_id";
-    //     $result = $this->conn->query($sql);
-    //     $this->handleError500($result);
-    // }
-    
-    private function delete_from_products($product_id){
+    private function deleteFromProducts($product_id){
         $sql = "DELETE FROM products WHERE product_id=$product_id";
         $result = $this->conn->query($sql);
         if (!$result) {
-            // Add some error handling here, for example:
             $error_message = $this->conn->error;
             http_response_code(500);
             echo "Error: " . $error_message;
             exit;
         }
-}
-
+    }
     
-    // private function delete_from_specific_table($product_id, $product_type){
-    //     $sql = "DELETE FROM $product_type WHERE id=$product_id";
-    //     $result = $this->conn->query($sql);
-    //     $this->handleError500($result);
-    // }
+    private function deleteFromSpecificTable($product_id, $product_type){
+        $sql = "DELETE FROM $product_type WHERE product_id=$product_id";
+        $result = $this->conn->query($sql);
+        if (!$result) {
+            $error_message = $this->conn->error;
+            http_response_code(500);
+            echo "Error: " . $error_message;
+            exit;
+        }
+    }
     
-    private function delete_from_specific_table($product_id, $product_type){
-    $sql = "DELETE FROM $product_type WHERE product_id=$product_id";
-    $result = $this->conn->query($sql);
-    if (!$result) {
-        // Add some error handling here, for example:
-        $error_message = $this->conn->error;
-        http_response_code(500);
-        echo "Error: " . $error_message;
-        exit;
+    public function deleteProduct($product_id, $product_type){
+        $this->deleteFromSpecificTable($product_id, $product_type);
+        $this->deleteFromProducts($product_id);
     }
 }
-
-    
-    public function delete_product($product_id, $product_type){
-        $this->delete_from_specific_table($product_id, $product_type);
-        $this->delete_from_products($product_id);
-    }
-}
-
-?>

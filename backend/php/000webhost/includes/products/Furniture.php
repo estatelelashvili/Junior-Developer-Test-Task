@@ -1,96 +1,112 @@
 <?php
 
-require_once 'Product.php';
+require_once 'product.php';
 
-class Furniture extends Product {
+class Furniture extends Product 
+{
     protected $dimensions;
-    protected $width_cm;
-    protected $height_cm;
-    protected $length_cm;
+    protected $widthCm;
+    protected $heightCm;
+    protected $lengthCm;
     
-    public function __construct($conn) {
-      parent::__construct($conn);
-   }
+    public function __construct($conn) 
+    {
+        parent::__construct($conn);
+    }
     
-    public function get_attribute() {
+    public function getAttribute() 
+    {
         return $this->dimensions;
     }
     
-    public function set_attribute($xyz) {
+    public function setAttribute($xyz) 
+    {
         $this->dimensions = $xyz;
     }
     
-    public function get_width() {
+    public function getWidth() 
+    {
         return $this->dimensions['width'];
     }
-    public function set_width($x) {
+    
+    public function setWidth($x) 
+    {
         $this->dimensions['width'] = $x;
     }
     
-    public function get_height() {
+    public function getHeight() 
+    {
         return $this->dimensions['height'];
     }
     
-    public function set_height($y) {
+    public function setHeight($y) 
+    {
         $this->dimensions['height'] = $y;
     }
     
-    public function get_length() {
+    public function getLength() 
+    {
         return $this->dimensions['length'];
     }
     
-    public function set_length($z) {
+    public function setLength($z) 
+    {
         $this->dimensions['length'] = $z;
     }
     
-    public function set_width_cm($width) {
-        $this->width_cm = $width;
+    public function setWidthCm($width) 
+    {
+        $this->widthCm = $width;
     }
     
-    public function set_height_cm($height) {
-        $this->height_cm = $height;
+    public function setHeightCm($height) 
+    {
+        $this->heightCm = $height;
     }
     
-    public function set_length_cm($length) {
-        $this->length_cm = $length;
+    public function setLengthCm($length) 
+    {
+        $this->lengthCm = $length;
     }
 
     
-    public function to_object() {
+    public function toObject() 
+    {
         $obj = new stdClass();
-        $obj->product_id = $this->get_product_id();
-        $obj->sku = $this->get_sku();
-        $obj->name = $this->get_name();
-        $obj->price = $this->get_price();
-        $obj->product_type = $this->get_product_type();
-        $obj->dimensions = $this->get_attribute();
+        $obj->productId = $this->getProductId();
+        $obj->sku = $this->getSku();
+        $obj->name = $this->getName();
+        $obj->price = $this->getPrice();
+        $obj->productType = $this->getProductType();
+        $obj->dimension = $this->getAttribute();
         return $obj;
     }     
     
-    private function compose_insert_query_furniture($data){
-        $product_id = $this->insert_into_products($data);
+    private function composeInsertQueryFurniture($data)
+    {
+        $productId = $this->insertIntoProducts($data);
         $sql = "INSERT INTO furniture (product_id, width_cm, height_cm, length_cm) 
-        VALUES ('$product_id', 
-            '$this->width_cm', 
-            '$this->height_cm', 
-            '$this->length_cm')";
+        VALUES ('$productId', 
+            '$this->widthCm', 
+            '$this->heightCm', 
+            '$this->lengthCm')";
         return $sql;
     }
     
 
     
-    private function set_furniture_attrbutes($data){
-        $this->set_width_cm($data['attribute']['width']);
-        $this->set_height_cm($data['attribute']['height']);
-        $this->set_length_cm($data['attribute']['length']);
+    private function setFurnitureAttrbutes($data)
+    {
+        $this->setWidthCm($data['attribute']['width']);
+        $this->setHeightCm($data['attribute']['height']);
+        $this->setLengthCm($data['attribute']['length']);
     }
     
-    public function insert_into_table($data){
-        $this->set_furniture_attrbutes($data);
-        $sql = $this->compose_insert_query_furniture($data);
+    public function insertIntoTable($data)
+    {
+        $this->setFurnitureAttrbutes($data);
+        $sql = $this->composeInsertQueryFurniture($data);
         $result = $this->conn->query($sql);
         $this->handleError500($result);
     }
 }
-
-?>

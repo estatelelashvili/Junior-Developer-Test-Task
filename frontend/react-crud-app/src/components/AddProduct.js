@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-// import Select from './form/Select';
-// import FormFields from './form/FormFields';
-// import componentMap from './productTypes/ComponentMap';
-// import HeaderAdd from './headers/HeaderAdd';
 import Form from './form/Form';
 
 class AddProduct extends Component {
