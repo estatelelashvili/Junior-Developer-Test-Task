@@ -9,6 +9,7 @@ class ProductList extends Component {
     this.state = {
       products: [],
       selectedProducts: [],
+      checkedStates: {},
     };
     this.fetchProducts = this.fetchProducts.bind(this);
     this.handleMassDelete = this.handleMassDelete.bind(this);
@@ -26,7 +27,7 @@ class ProductList extends Component {
       console.error('There was a problem with the fetch operation:', error);
     }
     this.setState({ selectedProducts: [] });
-    this.uncheckAllCheckboxes();
+    // this.uncheckAllCheckboxes();
   }
 
   async handleDeleteProduct(product) {
