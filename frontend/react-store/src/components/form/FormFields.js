@@ -14,6 +14,9 @@ export class FormFields extends Component {
             onChange={this.props.onHandleInputChange}
             required
           />
+          {this.props.state.skuError && (
+            <div className='error-message'>SKU must be unique!</div>
+          )}
         </div>
         <div className='product-field'>
           <label>Name</label>

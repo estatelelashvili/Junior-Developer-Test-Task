@@ -10,11 +10,17 @@ class AddProduct extends Component {
       price: '',
       type: '',
       attribute: {},
+      skuError: false,
     };
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
+    const sameSkuExists = await this.handleCheckSKU(this.state.sku);
+    if (sameSkuExists) {
+      this.setState({ skuError: true });
+      return;
+    }
     const { sku, name, price, type, attribute } = this.state;
     const data = {
       sku,
@@ -24,6 +30,33 @@ class AddProduct extends Component {
       attribute,
     };
     this.handlePostProduct(data);
+  };
+
+  fetchProducts = async () => {
+    try {
+      const response = await fetch('/api/endpoint.php');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      if (Array.isArray(data) && data.length !== 0) {
+        this.setState({ products: [] });
+        return data;
+      } else {
+        this.setState({ products: data });
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  handleCheckSKU = async (sku) => {
+    const products = await this.fetchProducts();
+    if (Array.isArray(products) && products.length !== 0) {
+      return products.some((p) => p.sku === sku);
+    } else {
+      return false;
+    }
   };
 
   handlePostProduct = async (data) => {
@@ -59,7 +92,7 @@ class AddProduct extends Component {
     });
   };
 
-  updateState = (name, value) => {
+  updateState = async (name, value) => {
     this.setState((prevState) => ({
       [name]:
         typeof value === 'object' ? { ...prevState[name], ...value } : value,

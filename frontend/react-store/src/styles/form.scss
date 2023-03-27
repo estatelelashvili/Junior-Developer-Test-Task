@@ -46,6 +46,20 @@
       }
     }
 
+    .error-message{
+      color: $error;
+      animation: hideAnimation 0s ease-in-out 2s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes hideAnimation {
+      to {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+      }
+    } 
+
     select{
       flex: 0.1;
       margin-left: 90px;
