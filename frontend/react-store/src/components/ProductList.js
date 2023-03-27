@@ -69,7 +69,14 @@ class ProductList extends Component {
 
   handleCheckBoxChange = (event, product) => {
     const { selectedProducts } = this.state;
-    event.target.checked && selectedProducts.push(product);
+    if (event.target.checked) {
+      selectedProducts.push(product);
+    } else {
+      const index = selectedProducts.findIndex((p) => p.id === product.id);
+      if (index !== -1) {
+        selectedProducts.splice(index, 1);
+      }
+    }
     this.setState({ selectedProducts });
   };
 
