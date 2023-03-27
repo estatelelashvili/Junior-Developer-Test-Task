@@ -26,7 +26,7 @@ class AddProduct extends Component {
     this.handlePostProduct(data);
   };
 
-  async handlePostProduct(data) {
+  handlePostProduct = async (data) => {
     try {
       const response = await fetch('/api/endpoint.php', {
         method: 'POST',
@@ -40,7 +40,7 @@ class AddProduct extends Component {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   handleTypeChange = (event) => {
     this.setState({
