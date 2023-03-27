@@ -72,7 +72,9 @@ class ProductList extends Component {
     if (event.target.checked) {
       selectedProducts.push(product);
     } else {
-      const index = selectedProducts.findIndex((p) => p.id === product.id);
+      const index = selectedProducts.findIndex(
+        (p) => p.product_id === product.product_id
+      );
       if (index !== -1) {
         selectedProducts.splice(index, 1);
       }
