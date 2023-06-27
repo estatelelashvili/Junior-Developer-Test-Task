@@ -26,7 +26,7 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`id20372848_estate`@`%` PROCEDURE `get_products_by_type` (IN `p_product_type` VARCHAR(50))  BEGIN
+CREATE DEFINER=`if0_34425424!`@`%` PROCEDURE `get_products_by_type` (IN `p_product_type` VARCHAR(50))  BEGIN
     SELECT 
         p.*, 
         CASE 
@@ -43,7 +43,7 @@ CREATE DEFINER=`id20372848_estate`@`%` PROCEDURE `get_products_by_type` (IN `p_p
         p.product_type = p_product_type;
 END$$
 
-CREATE DEFINER=`id20372848_estate`@`%` PROCEDURE `process_products` ()  BEGIN
+CREATE DEFINER=`if0_34425424!`@`%` PROCEDURE `process_products` ()  BEGIN
   DECLARE done INT DEFAULT FALSE;
   DECLARE product_type VARCHAR(50);
   DECLARE cur CURSOR FOR SELECT DISTINCT product_type FROM products;
